@@ -12,3 +12,8 @@
  *= require bootstrap
  *= require_tree .
  */
+
+.error-message{
+	color: #cc0000;
+	margin-top: 5px;
+}
