@@ -9,7 +9,7 @@
 	<!-- Meta Information !-->
 
 	<meta charset="utf-8">
-	<title>My Amazing Restuarant Site</title> 
+	<title>My Amazing Restaurant Site</title> 
 	<meta name="description" content="My Amazing Restaurant Site"/>
 	<meta name="keywords" content="Food, Perth, Tasty, Gorge" />
 	<meta name="author" content="Zane"/>
@@ -58,7 +58,8 @@
 		      <div class="nav-collapse collapse">
 		        <ul class="nav">
 				    <li><%= link_to "Home", root_path %></li>
-				    <li id="filter" class="dropdown">
+				    
+					  <% if @show_filters %>
 		              <li id="filter" class="dropdown">
 		              <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">Food Type <b class="caret"></b></a>
 		              <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
@@ -72,11 +73,9 @@
 							<%= link_to "Everywhere Else", filter_path(:filter => "All"), :role => "menuitem", :remote => true, :tabindex  => "-1" %>
 						</li>
 		              </ul>
-		              <!-- <li>
-		            	<form class="navbar-search">
-						  <input type="text" class="search-query" placeholder="Search">
-						</form>
-		            </li> -->
+					  </li>
+					  <% end %>
+					
 				</ul>
 				<ul class="nav pull-right">
 					<li>
