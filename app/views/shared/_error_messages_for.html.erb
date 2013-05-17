@@ -1,0 +1,5 @@
+<% if object.errors[field].any? %>
+	<div class="error-message">
+		<%= "#{(field.to_s.humanize + ' ' + object.errors[field].first).capitalize}" %>
+	</div>
+<% end %>

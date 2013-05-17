@@ -1,0 +1,9 @@
+<% if flash[:success] %>
+	<div class="alert alert-success"><%= flash[:success] %></div>
+<% end %>
+
+<div class="restaurants">
+
+	<%= render :partial => "restaurant", :collection => @restaurants%>
+	
+</div>

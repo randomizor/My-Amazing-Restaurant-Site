@@ -1,0 +1,51 @@
+
+		<% if flash[:success] %>
+			<div class="alert alert-success"><%= flash[:success] %></div>
+		<% end %>	
+		
+		<% if flash[:error] %>
+			<div class="alert alert-error"><%= flash[:error] %></div>
+		<% end %>
+
+		<%= form_for @restaurant, :html => {:class => "form-horizontal"} do |f| %>
+		  <div class="control-group">
+			<%= f.label :name, "Restaurant Name", :class => "control-label" %>
+		    <div class="controls">
+				<%= f.text_field :name, :placeholder => "Name" %>
+				<%= render "shared/error_messages_for", :object => f.object, :field => :name %>
+		    </div>
+		  </div>
+		  <div class="control-group">
+			<%= f.label :food_type, "Food Type", :class => "control-label" %>
+		    <div class="controls">
+				<%= f.text_field :food_type, :placeholder => "Italian, Asian,..." %>
+				<%= render "shared/error_messages_for", :object => f.object, :field => :food_type %>
+		    </div>
+		  </div>
+		  <div class="control-group">
+			<%= f.label :food_type, "Photo URL", :class => "control-label" %>
+		    <div class="controls">
+				<%= f.text_field :photo_url, :placeholder => "http://www......" %>
+				<%= render "shared/error_messages_for", :object => f.object, :field => :photo_url %>
+		    </div>
+		  </div>
+		  <div class="control-group">
+			<%= f.label :location, "Location", :class => "control-label" %>
+		    <div class="controls">
+				<%= f.text_field :location, :placeholder => "Location" %>
+				<%= render "shared/error_messages_for", :object => f.object, :field => :location %>
+		    </div>
+		  </div>
+		  <div class="control-group">
+			<%= f.label :description, "Description", :class => "control-label" %>
+		    <div class="controls">
+			<%= f.text_area :description, :rows => 3 %>
+			<%= render "shared/error_messages_for", :object => f.object, :field => :description %>
+		    </div>
+		  </div>
+		  <div class="control-group">
+		  	<div class="controls">
+				<%= f.submit "Submit", :class => "btn btn-primary" %>
+		  	</div>
+		  </div>
+		<% end %>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+	<!-- Meta Information !-->
+
+	<meta charset="utf-8">
+	<title>My Amazing Restuarant Site</title> 
+	<meta name="description" content="My Amazing Restaurant Site"/>
+	<meta name="keywords" content="Food, Perth, Tasty, Gorge" />
+	<meta name="author" content="Zane"/>
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: Facebook Open Graph -->
+	<meta property="og:title" content=""/>
+	<meta property="og:description" content=""/>
+	<meta property="og:type" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content=""/>
+	<!-- end: Facebook Open Graph -->	
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="span12" style="height:80px;width100%;text-align:center;">
+				<h2>My Amazing Restaurant Site</h2>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="navbar">
+		  <div class="navbar-inner">
+		    <div class="container">
+
+		      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </a>
+
+		      <!-- Be sure to leave the brand out there if you want it shown -->
+		      <a class="brand" href="#"></a>
+
+		      <!-- Everything you want hidden at 940px or less, place within here -->
+		      <div class="nav-collapse collapse">
+		        <ul class="nav">
+				    <li><%= link_to "Home", root_path %></li>
+				    <li id="filter" class="dropdown">
+		              <li id="filter" class="dropdown">
+		              <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">Food Type <b class="caret"></b></a>
+		              <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+		                <li role="presentation">
+							<%= link_to "Italian", filter_path(:filter => "Italian"), :role => "menuitem", :remote => true, :tabindex  => "-1" %>
+						</li>
+		                <li role="presentation">
+							<%= link_to "Asian", filter_path(:filter => "Asian"), :role => "menuitem", :remote => true, :tabindex  => "-1" %>
+						</li>
+		                <li role="presentation">
+							<%= link_to "Everywhere Else", filter_path(:filter => "All"), :role => "menuitem", :remote => true, :tabindex  => "-1" %>
+						</li>
+		              </ul>
+		              <!-- <li>
+		            	<form class="navbar-search">
+						  <input type="text" class="search-query" placeholder="Search">
+						</form>
+		            </li> -->
+				</ul>
+				<ul class="nav pull-right">
+					<li>
+						<div>
+							<%= link_to "New Restaurant", new_restaurant_path, :class => "btn btn-primary" %>
+						</div>
+					</li>
+
+				</ul>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+<div class="container">
+	<%= yield %>
+</div>	
+
+</body>
+</html>
