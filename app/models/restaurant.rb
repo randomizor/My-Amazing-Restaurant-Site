@@ -11,7 +11,7 @@ class Restaurant < ActiveRecord::Base
     unless filter == "All"
       where("food_type = ?", filter)
     else
-      scoped
+      all
     end
     
   end
